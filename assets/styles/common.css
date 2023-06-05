@@ -1,0 +1,123 @@
+@font-face {
+  font-family: "TeXGyreHeros";
+  font-weight: 400;
+  src: url("/assets/fonts/TeXGyreHeros-Regular.woff2") format("woff2");
+  src: url("/assets/fonts/TeXGyreHeros-Regular.woff") format("woff");
+}
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  list-style: none;
+  font-style: normal;
+  word-break: keep-all;
+  text-decoration: none;
+  box-sizing: border-box;
+  vertical-align: baseline;
+  background-color: transparent;
+}
+
+img {
+  display: block;
+}
+
+input:focus {
+  outline: none;
+}
+
+a, a:hover, a:visited {
+  color: #000;
+  cursor: pointer;
+  user-select: none;
+}
+@media (prefers-color-scheme: dark) {
+  a, a:hover, a:visited {
+    color: #FFF;
+  }
+}
+
+button {
+  color: #000;
+  cursor: pointer;
+  user-select: none;
+}
+@media (prefers-color-scheme: dark) {
+  button {
+    color: #FFF;
+  }
+}
+
+.win * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-stroke: 0.1px;
+}
+
+* {
+  font-family: "TeXGyreHeros", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.2pt;
+  word-spacing: -0.2pt;
+}
+
+h1 {
+  font-size: 32px;
+  text-align: center;
+}
+
+body {
+  color: #000;
+  background: #FFF;
+}
+@media (prefers-color-scheme: dark) {
+  body {
+    color: #FFF;
+    background: #222;
+  }
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  font-weight: 500;
+}
+header #logo {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 40px;
+  height: 40px;
+  padding: 2px;
+}
+header #logo img {
+  width: 100%;
+}
+
+#container {
+  width: 100%;
+  max-width: 800px;
+  margin: 56px auto 0 auto;
+}
+
+#contents {
+  display: flex;
+  flex-flow: column nowrap;
+  text-align: center;
+}
+#contents h1 {
+  margin-bottom: 22px;
+}
+#contents a {
+  margin: 0 auto 8px auto;
+  border-bottom: solid 2px #000;
+}
+@media (prefers-color-scheme: dark) {
+  #contents a {
+    border-bottom: solid 2px #FFF;
+  }
+}
+#contents a:hover {
+  border-bottom: solid 2px #0BFF54;
+}
