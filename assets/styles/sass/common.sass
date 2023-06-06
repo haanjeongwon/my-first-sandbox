@@ -61,6 +61,7 @@ body
 
 // header
 header
+  z-index: 100
   position: fixed
   top: 0
   left: 0
@@ -73,16 +74,9 @@ header
     width: 40px
     height: 40px
     padding: 2px
-    img
-      width: 100%
     embed
       width: 100%
-
-.iphone.safari
-  header
-    #logo
-      img
-        filter: invert(100%)
+      pointer-events: none
 
 // container
 #container
