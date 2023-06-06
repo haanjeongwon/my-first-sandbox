@@ -86,11 +86,11 @@ header {
 }
 header #logo {
   position: absolute;
-  top: 12px;
-  left: 12px;
+  top: 24px;
+  left: 24px;
   width: 40px;
   height: 40px;
-  padding: 2px;
+  padding: 4px;
 }
 header #logo embed {
   width: 100%;
@@ -101,7 +101,12 @@ header #logo embed {
   width: 100%;
   max-width: 800px;
   padding: 30px 48px;
-  margin: 64px auto 0 auto;
+  margin: 88px auto 0 auto;
+}
+@media (max-width: 900px) {
+  #container {
+    padding: 14px 28px;
+  }
 }
 
 #contents {
