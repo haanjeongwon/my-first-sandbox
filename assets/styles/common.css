@@ -72,7 +72,7 @@ body {
 @media (prefers-color-scheme: dark) {
   body {
     color: #FFF;
-    background: #222;
+    background: #202124;
   }
 }
 
@@ -110,6 +110,7 @@ header #logo img {
   margin-bottom: 22px;
 }
 #contents a {
+  display: block;
   margin: 0 auto 8px auto;
   border-bottom: solid 2px #000;
 }
@@ -119,5 +120,5 @@ header #logo img {
   }
 }
 #contents a:hover {
-  border-bottom: solid 2px #0BFF54;
+  border-bottom: solid 2px transparent;
 }
