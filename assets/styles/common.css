@@ -1,8 +1,8 @@
 @font-face {
   font-family: "TeXGyreHeros";
   font-weight: 400;
-  src: url("/assets/fonts/TeXGyreHeros-Regular.woff2") format("woff2");
-  src: url("/assets/fonts/TeXGyreHeros-Regular.woff") format("woff");
+  src: url("../fonts/TeXGyreHeros-Regular.woff2") format("woff2");
+  src: url("../fonts/TeXGyreHeros-Regular.woff") format("woff");
 }
 * {
   margin: 0;
