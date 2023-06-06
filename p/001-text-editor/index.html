@@ -13,7 +13,48 @@
     <a id="logo" href="../../"><img src="../../assets/images/favicon.svg" alt=""></a>
   </header>
   <section id="container">
-    <h1>001. Text Editor 1</h1>
+    <div id="p-001">
+      <h1>001. Text Editor 1</h1>
+
+      <div id="p-001-input">
+        <h2>input</h2>
+        <input type="text" id="input" placeholder="Type here and press the button below.">
+        <div class="btn-wrap">
+          <button id="btn-input-h3" onclick="addElementInput('h3')">+ Heading</button>
+          <button id="btn-input-p" onclick="addElementInput('p')">+ Paragraph</button>
+        </div>
+        <div id="result-input" class="result"></div>
+      </div>
+
+      <div id="p-001-textarea">
+        <h2>textarea</h2>
+        <textarea id="textarea" placeholder="Type here and press the button below."></textarea>
+        <div class="btn-wrap">
+          <button id="btn-textarea-h3" onclick="addElementTextarea('h3')">+ Heading</button>
+          <button id="btn-textarea-p" onclick="addElementTextarea('p')">+ Paragraph</button>
+        </div>
+        <div id="result-textarea" class="result"></div>
+      </div>
+
+    </div>
   </section>
 </body>
+<script>
+  const input = document.getElementById('input');
+  const resultInput = document.getElementById('result-input');
+  const textarea = document.getElementById('textarea');
+  const resultTextarea = document.getElementById('result-textarea');
+
+  function addElementInput(a) {
+    let inputElement = document.createElement(a);
+    inputElement.textContent = input.value;
+    resultInput.appendChild(inputElement);
+  };
+
+  function addElementTextarea(a) {
+    let inputElement = document.createElement(a);
+    inputElement.textContent = textarea.value;
+    resultTextarea.appendChild(inputElement);
+  };
+</script>
 </html>
