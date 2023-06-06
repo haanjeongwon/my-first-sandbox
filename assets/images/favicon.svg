@@ -4,11 +4,14 @@
 	rect {
 		fil: #000;
 	}
-	@media ( prefers-color-scheme: dark ) {
-			rect {
-				fill: #FFF;
-			}
+	@media (prefers-color-scheme: dark) {
+		rect {
+			fill: #FFF;
 		}
+		* {
+			fill: #FFF;
+		}
+	}
 </style>
 <g>
 	<rect x="23.74" y="63.39" width="20.83" height="156.69"/>
