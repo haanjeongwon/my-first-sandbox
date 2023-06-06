@@ -95,7 +95,7 @@ header #logo img {
   width: 100%;
 }
 
-.iphone.safari3 header #logo img {
+.iphone.safari header #logo img {
   filter: invert(100%);
 }
 
