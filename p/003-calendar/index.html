@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text Editor | Sandbox</title>
+  <link rel="icon" href="../../assets/images/favicon.svg">
+  <link rel="icon" href="../../assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="../../assets/images/favicon.png">
+  <link rel="stylesheet" href="../../assets/styles/common.css">
+  <script src="../../assets/scripts/cssbrowserselector.js"></script>
+</head>
+<body>
+  <header>
+    <a id="logo" href="../../"><embed src="../../assets/images/logo.svg" type="image/svg+xml" aria-label=""></a>
+  </header>
+  <!-- content -->
+  <section id="container">
+    <div id="p-003">
+      <h1>003. Calendar 1</h1>
+      <div id="nav">
+        <button id="prev">◀</button>
+        <h3>
+          <span id="year"></span> . <span id="month"></span>
+        </h3>
+        <button id="next">▶</button>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>일</th>
+            <th>월</th>
+            <th>화</th>
+            <th>수</th>
+            <th>목</th>
+            <th>금</th>
+            <th>토</th>
+          </tr>
+        </thead>
+        <tbody id="calendar-body"></tbody>
+      </table>
+    </div>
+  </section>
+</body>
+<script>
+  const calendar = document.getElementById('calendar-body');
+  const year = document.getElementById('year');
+  const month = document.getElementById('month');
+  const btnPrev = document.getElementById('prev');
+  const btnNext = document.getElementById('next');
+
+  let currentDate = new Date();
+  let currentYear = currentDate.getFullYear();
+  let currentMonth = currentDate.getMonth();
+
+  let today = new Date();
+  let todayString = `${today.getFullYear()}-${today.getMonth()}-${today.getDate()}`;
+
+  year.innerHTML = currentYear; // display current year
+  month.innerHTML = currentMonth + 1; // display current month
+  createCalendar(currentYear, currentMonth); // display calendar
+
+  // *function*
+  // create calendar
+  function createCalendar(year, month) {
+    let firstDay = new Date(year, month, 1);
+    let lastDay = new Date(year, month + 1, 0);
+
+    let tr = document.createElement('tr');
+
+    // add blanks (front)
+    for (let i = 0; i < firstDay.getDay(); i++) {
+      let td = document.createElement('td');
+      tr.appendChild(td);
+    };
+
+    // add days
+    let currentDay = new Date(firstDay);
+    while (currentDay <= lastDay) { 
+
+      // check -- sunday?
+      if (currentDay.getDay() === 0) {
+        calendar.appendChild(tr);
+        tr = document.createElement('tr');
+      };
+
+      let td = document.createElement('td');
+      // check -- today?
+      let currentString = `${currentDay.getFullYear()}-${currentDay.getMonth()}-${currentDay.getDate()}`;
+      if (currentString == todayString) {
+        let todayMark = document.createElement('div');
+        todayMark.innerText = currentDay.getDate();
+        todayMark.classList.add('today');
+        td.appendChild(todayMark);
+        
+      } else {
+        td.innerText = currentDay.getDate();
+      };
+      tr.appendChild(td);
+
+      currentDay.setDate(currentDay.getDate() + 1);
+    };
+
+    // add blanks (back)
+    for (let i = currentDay.getDay(); i < 7; i++) {
+      if (i == 0) {
+        calendar.appendChild(tr);
+        break;
+      } else {
+        let td = document.createElement('td');
+        tr.appendChild(td);
+        calendar.appendChild(tr);
+      };
+    };
+  };
+
+  // *function*
+  // button -- prev
+  btnPrev.addEventListener('click', function() {
+    if (currentMonth == 0) {
+      currentYear--;
+      currentMonth = 11;
+    } else {
+      currentMonth--;
+    };
+    year.innerHTML = currentYear;
+    month.innerHTML = currentMonth + 1;
+    calendar.innerHTML = '';
+    createCalendar(currentYear, currentMonth);
+  });
+
+  // *function*
+  // button -- next
+  btnNext.addEventListener('click', function() {
+    if (currentMonth == 11) {
+      currentYear++;
+      currentMonth = 0;
+    } else {
+      currentMonth++;
+    };
+    year.innerHTML = currentYear;
+    month.innerHTML = currentMonth + 1;
+    calendar.innerHTML = '';
+    createCalendar(currentYear, currentMonth);
+  });
+</script>
+</html>

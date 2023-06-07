@@ -210,3 +210,62 @@ header #logo embed {
   font-size: 13px;
   line-height: 1.4;
 }
+
+#p-003 h1 {
+  margin-bottom: 40px;
+}
+#p-003 #nav {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  width: 280px;
+  margin: 0 auto 20px auto;
+}
+#p-003 #nav h3 {
+  font-size: 20px;
+  text-align: center;
+  width: 100%;
+}
+#p-003 #nav button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 30px;
+}
+#p-003 table {
+  display: block;
+  width: 280px;
+  margin: 0 auto;
+  border: solid 0.5px #000;
+  font-size: 14px;
+}
+#p-003 table * {
+  display: block;
+}
+#p-003 thead {
+  background: #EEE;
+}
+#p-003 tr {
+  display: flex;
+  flex-flow: row nowrap;
+}
+#p-003 th, #p-003 td {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 4px;
+  border: solid 0.5px #000;
+}
+#p-003 .today {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: #ff8f79;
+  border-radius: 100px;
+}
