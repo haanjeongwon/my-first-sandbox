@@ -10,6 +10,15 @@
   <link rel="apple-touch-icon" href="../../assets/images/favicon.png">
   <link rel="stylesheet" href="../../assets/styles/common.css">
   <script src="../../assets/scripts/cssbrowserselector.js"></script>
+  <!-- monospace font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap" rel="stylesheet">
+  <!-- highlight.js -->
+  <link rel="stylesheet"
+  href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-light.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
 </head>
 <body>
   <header>
@@ -23,26 +32,22 @@
       
       <div class="before">
         <h2>Before</h2>
-        <pre>
-          <code>
-            let number = 1;
-            function hi() {
-              console.log(number);
-            };
-          </code>
-        </pre>
+        <pre><code class="javascript">
+          let number = 1;
+          function hi() {
+            console.log(number);
+          };
+        </code></pre>
       </div>
       
       <div class="after">
         <h2>After</h2>
-        <pre id="pre">
-          <code>
-            let number = 1;
-            function hi() {
-              console.log(number);
-            };
-          </code>
-        </pre>
+        <pre id="pre"><code class="javascript">
+          let number = 1;
+          function hi() {
+            console.log(number);
+          };
+        </code></pre>
       </div>
       
     </div>

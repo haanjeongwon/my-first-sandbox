@@ -270,11 +270,25 @@ header #logo embed {
   border-radius: 100px;
 }
 
-#p-004 pre, #p-004 code {
-  font-family: monospace;
+#p-004 pre * {
+  font-family: "Fira Mono", monospace;
+  font-weight: 400;
+  font-size: 13px;
+  letter-spacing: 0;
+  word-spacing: 0;
+  line-height: 1.4;
 }
 #p-004 pre {
-  border: solid 1px #000;
+  padding: 0;
+  margin: 0;
+  border: dashed 1px #000;
+  border-radius: 2px;
+  background: #F4F4F4;
+}
+#p-004 pre code {
+  padding: 0;
+  margin: 0;
+  background: transparent;
 }
 #p-004 h2 {
   margin-bottom: 8px;
