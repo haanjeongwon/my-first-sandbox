@@ -269,3 +269,16 @@ header #logo embed {
   background: #ff8f79;
   border-radius: 100px;
 }
+
+#p-004 pre, #p-004 code {
+  font-family: monospace;
+}
+#p-004 pre {
+  border: solid 1px #000;
+}
+#p-004 h2 {
+  margin-bottom: 8px;
+}
+#p-004 .before {
+  margin: 60px 0;
+}
