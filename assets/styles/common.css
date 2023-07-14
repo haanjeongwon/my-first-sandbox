@@ -327,3 +327,31 @@ header #logo embed {
   font-style: italic;
   font-size: 28px;
 }
+
+#p-006 h1 {
+  margin-bottom: 60px;
+}
+#p-006 #buttons {
+  width: 100%;
+  height: 100px;
+  margin-bottom: 16px;
+  border: dashed 1px #000;
+  border-radius: 2px;
+}
+#p-006 #canvas {
+  width: 600px;
+  height: 600px;
+  margin: 0 auto 16px auto;
+  border: solid 1px #000;
+  background: #EEE;
+}
+#p-006 #save {
+  display: block;
+  width: 140px;
+  height: 50px;
+  padding-bottom: 4px;
+  margin: 0 auto;
+  border: solid 1px #000;
+  border-radius: 25px;
+  font-size: 18px;
+}
