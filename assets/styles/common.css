@@ -358,8 +358,8 @@ header #logo embed {
 
 #p-007 input {
   display: flex;
-  height: 32px;
   width: 100%;
+  height: 32px;
   padding: 0 6px;
   margin-bottom: 8px;
   border: solid 1px #000;
@@ -426,6 +426,14 @@ header #logo embed {
   padding: 4px;
   border: solid 2px blue;
   color: blue;
+}
+#p-007 select {
+  display: block;
+  width: 100%;
+  height: 32px;
+  margin-bottom: 8px;
+  border: solid 1px #000;
+  border-radius: 2px;
 }
 #p-007 button {
   display: flex;
