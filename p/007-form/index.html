@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form | Sandbox</title>
+  <link rel="icon" href="../../assets/images/favicon.svg">
+  <link rel="icon" href="../../assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="../../assets/images/favicon.png">
+  <link rel="stylesheet" href="../../assets/styles/common.css">
+  <script src="../../assets/scripts/cssbrowserselector.js"></script>
+</head>
+<body>
+  <header>
+    <a id="logo" href="../../"><embed src="../../assets/images/logo.svg" type="image/svg+xml" aria-label=""></a>
+  </header>
+
+  <!-- content -->
+  <section id="container">
+    <div id="p-007">
+      <h1>007. Form</h1>
+
+      <div id="input">
+        <form action="" method="">
+          <!-- text -->
+          <label for="name">Name</label>
+          <input type="text" name="name" id="name">
+          <!-- number -->
+          <label for="age">Age</label>
+          <input type="number" name="age" id="age">
+          <!-- email -->
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email">
+          <!-- date -->
+          <label for="date">Date</label>
+          <input type="date" name="date" id="date">
+          <!-- password -->
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password">
+          <!-- radio -->
+          <ul class="input-radio-wrap">
+            <li>
+              <input type="radio" name="radio" id="radio-apple" value="Apple">
+              <label for="radio-apple">Apple</label>
+            </li>
+            <li>
+              <input type="radio" name="radio" id="radio-watermelon" value="Watermelon">
+              <label for="radio-watermelon">Watermelon</label>
+            </li>
+            <li>
+              <input type="radio" name="radio" id="radio-orange" value="Orange">
+              <label for="radio-orange">Orange</label>
+            </li>
+          </ul>
+          <!-- checkbox(single) -->
+          <ul class="input-checkbox-wrap">
+            <li>
+              <input type="checkbox" name="agree" id="checkbox-agree">
+              <label for="checkbox-agree">Agree to tems?</label>
+            </li>
+          </ul>
+          <!-- checkbox(multiple) -->
+          <ul class="input-checkbox-wrap">
+            <li>
+              <input type="checkbox" name="checkbox" id="checkbox-apple" value="Apple">
+              <label for="checkbox-apple">Apple</label>
+            </li>
+            <li>
+              <input type="checkbox" name="checkbox" id="checkbox-watermelon" value="Watermelon">
+              <label for="checkbox-watermelon">Watermelon</label>
+            </li>
+            <li>
+              <input type="checkbox" name="checkbox" id="checkbox-orange" value="Orange">
+              <label for="checkbox-orange">Orange</label>
+            </li>
+          </ul>
+          <!-- textarea -->
+          <label for="textarea">Textarea</label>
+          <textarea name="textarea" id="textarea"></textarea>
+          <!-- select  -->
+          <!-- file -->
+          <label for="file">File</label>
+          <input type="file" name="file" id="file">
+          <!-- button -->
+          <button>Submit</button>
+        </form>
+      </div>
+
+      <div id="output">
+      </div>
+
+    </div>
+  </section>
+</body>
+</html>

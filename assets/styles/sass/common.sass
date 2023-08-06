@@ -219,12 +219,12 @@ header
 // *project 004*
 #p-004
   pre *
-    font-family: 'Fira Mono', monospace
-    font-weight: 400
-    font-size: 13px
-    letter-spacing: 0
-    word-spacing: 0
-    line-height: 1.4
+  font-family: 'Fira Mono', monospace
+  font-weight: 400
+  font-size: 13px
+  letter-spacing: 0
+  word-spacing: 0
+  line-height: 1.4
   pre
     padding: 0
     margin: 0
@@ -293,3 +293,89 @@ header
     border: solid 1px #000
     border-radius: 25px
     font-size: 18px
+
+// *project 007*
+#p-007
+  input
+    display: flex
+    height: 32px
+    width: 100%
+    padding: 0 6px
+    margin-bottom: 8px
+    border: solid 1px #000
+    border-radius: 2px
+    &:focus
+      padding: 0 5px
+      border: solid 2px blue
+      color: blue
+  ul.input-radio-wrap
+    display: flex
+    flex-flow: row nowrap
+    align-items: center
+    justify-content: center
+    li
+      display: flex
+      flex-flow: row nowrap
+      align-items: center
+      justify-content: center
+      margin: 0 8px
+      input[type=radio]
+        width: 18px
+        padding: 0
+        margin: 0 4px 0 0
+      label
+        padding-bottom: 3px
+        margin: 0
+  ul.input-checkbox-wrap
+    display: flex
+    flex-flow: row nowrap
+    align-items: center
+    justify-content: center
+    li
+      display: flex
+      flex-flow: row nowrap
+      align-items: center
+      justify-content: center
+      margin: 0 8px
+      input[type=checkbox]
+        width: 16px
+        padding: 0
+        margin: 0 4px 0 0
+      label
+        padding-bottom: 3px
+        margin: 0
+  textarea
+    display: block
+    width: 100%
+    padding: 5px
+    margin-bottom: 8px
+    border: solid 1px #000
+    border-radius: 2px
+    &:focus
+      padding: 4px
+      border: solid 2px blue
+      color: blue
+  button
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 100px
+    height: 30px
+    padding-bottom: 3px
+    margin: 12px auto 0 auto
+    border: solid 1px #000
+    border-radius: 4px
+    font-size: 16px
+    &:hover
+      background: #EEE
+    &:active
+      background: #CCC
+  #input
+    padding: 16px
+    margin: 36px 0
+    border: dashed 1px #000
+    border-radius: 2px
+  #output
+    padding: 16px
+    border: dashed 1px #000
+    border-radius: 2px
