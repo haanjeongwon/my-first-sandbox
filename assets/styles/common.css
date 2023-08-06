@@ -421,6 +421,7 @@ header #logo embed {
   margin-bottom: 8px;
   border: solid 1px #000;
   border-radius: 2px;
+  resize: none;
 }
 #p-007 textarea:focus {
   padding: 4px;
