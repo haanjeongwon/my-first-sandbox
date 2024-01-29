@@ -431,13 +431,39 @@ main
 
 // *practice 001*
 #pp-001
+  header
+    .inner
+      h1
+        position: absolute
+        width: 100%
+        margin: 11px 0 0 0
+        pointer-events: none
   main
-    width: 100vh
+    position: relative
+    width: 100vw
     margin: 0
     padding: 0
-    div
+    section
+      display: flex
+      flex-flow: column nowrap
       width: 100vw
-      height: 100vw
-      background: grey
-      &:last-child
-        background: yellow
+    #front
+      position: absolute
+      top: 0
+      left: 0
+      .part
+        width: 65vw
+        height: 65vw
+        margin: 0 auto
+        background: grey
+        border-bottom: solid 1px #000
+        &#hook-front
+          background: black
+    #back
+      .part
+        width: 100vw
+        height: 100vw
+        background: green
+        border-bottom: solid 1px #000
+        &#hook-back
+          background: black
