@@ -65,6 +65,11 @@ h1 {
   text-align: center;
 }
 
+h2 {
+  font-size: 26px;
+  text-align: center;
+}
+
 body {
   color: #000;
   background: #FFF;
@@ -82,19 +87,36 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  font-weight: 500;
 }
-header #logo {
+header .inner {
+  position: relative;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+header .inner #logo {
   position: absolute;
-  top: 24px;
-  left: 24px;
+  top: 20px;
+  left: 20px;
   width: 40px;
   height: 40px;
   padding: 4px;
 }
-header #logo embed {
+header .inner #logo embed {
   width: 100%;
   pointer-events: none;
+}
+
+main {
+  width: 100%;
+  max-width: 800px;
+  padding: 30px 48px;
+  margin: 80px auto 0 auto;
+}
+@media (max-width: 900px) {
+  main {
+    padding: 14px 28px;
+  }
 }
 
 #container {
@@ -115,19 +137,28 @@ header #logo embed {
   text-align: center;
 }
 #contents h1 {
-  margin-bottom: 22px;
+  margin-bottom: 48px;
 }
-#contents a {
+#contents section {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+  margin-bottom: 48px;
+}
+#contents section h2 {
+  margin-bottom: 18px;
+}
+#contents section a {
   display: block;
-  margin: 0 auto 8px auto;
+  margin: 0 auto 10px auto;
   border-bottom: solid 2px #000;
 }
 @media (prefers-color-scheme: dark) {
-  #contents a {
+  #contents section a {
     border-bottom: solid 2px #FFF;
   }
 }
-#contents a:hover {
+#contents section a:hover {
   border-bottom: solid 2px transparent;
 }
 

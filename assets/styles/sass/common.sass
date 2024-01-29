@@ -55,6 +55,10 @@ h1
   font-size: 32px
   text-align: center
 
+h2
+  font-size: 26px
+  text-align: center
+
 // body
 body
   color: #000
@@ -70,19 +74,32 @@ header
   top: 0
   left: 0
   width: 100%
-  font-weight: 500
-  #logo
-    position: absolute
-    top: 24px
-    left: 24px
-    width: 40px
-    height: 40px
-    padding: 4px
-    embed
-      width: 100%
-      pointer-events: none
+  .inner
+    position: relative
+    width: 100%
+    max-width: 1400px
+    margin: 0 auto
+    #logo
+      position: absolute
+      top: 20px
+      left: 20px
+      width: 40px
+      height: 40px
+      padding: 4px
+      embed
+        width: 100%
+        pointer-events: none
 
-// container
+// main
+main
+  width: 100%
+  max-width: 800px
+  padding: 30px 48px
+  margin: 80px auto 0 auto
+  @include mobile
+    padding: 14px 28px
+
+// container (legacy)
 #container
   width: 100%
   max-width: 800px
@@ -97,15 +114,22 @@ header
   flex-flow: column nowrap
   text-align: center
   h1
-    margin-bottom: 22px
-  a
-    display: block
-    margin: 0 auto 8px auto
-    border-bottom: solid 2px #000
-    @media (prefers-color-scheme: dark)
-      border-bottom: solid 2px #FFF
-    &:hover
-      border-bottom: solid 2px transparent
+    margin-bottom: 48px
+  section
+    display: flex
+    flex-flow: column nowrap
+    width: 100%
+    margin-bottom: 48px
+    h2
+      margin-bottom: 18px
+    a
+      display: block
+      margin: 0 auto 10px auto
+      border-bottom: solid 2px #000
+      @media (prefers-color-scheme: dark)
+        border-bottom: solid 2px #FFF
+      &:hover
+        border-bottom: solid 2px transparent
 
 // *project 001*
 #p-001
