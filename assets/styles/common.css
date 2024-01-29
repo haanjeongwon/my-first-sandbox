@@ -538,6 +538,9 @@ main {
   left: 0;
 }
 #pp-001 main #front .part {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 65vw;
   height: 65vw;
   margin: 0 auto;
