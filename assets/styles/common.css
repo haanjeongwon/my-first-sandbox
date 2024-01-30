@@ -600,6 +600,16 @@ main {
   width: 20px;
   height: 20px;
 }
+#pp-002 main #imageContainer #overlayLayer .block {
+  display: flex;
+  flex-flow: row wrap;
+  width: 20px;
+  height: 20px;
+}
+#pp-002 main #imageContainer #overlayLayer .block li {
+  width: 10px;
+  height: 10px;
+}
 
 @media (max-width: 900px) {
   #pp-002 {
