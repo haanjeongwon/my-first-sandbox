@@ -470,3 +470,38 @@ main
         border-bottom: solid 1px #000
         &#hook-back
           background: black
+
+// *practice 002*
+#pp-002
+  background: #222
+  main
+    position: relative
+    width: 100vw
+    max-width: 100vw
+    height: 100vh
+    padding: 0
+    margin: 0
+    #imageContainer
+      position: relative
+      width: 100vw
+      height: 100vh
+      #image
+        width: 100vw
+        height: 100vh
+      #overlayCanvas
+        z-index: 1
+        position: absolute
+        top: 0
+        left: 0
+      #overlayLayer
+        z-index: 2
+        display: flex
+        flex-flow: row wrap
+        position: absolute
+        top: 0
+        left: 0
+        width: 100vw
+        pointer-events: none
+        .part
+          width: 20px
+          height: 20px
