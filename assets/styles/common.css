@@ -600,3 +600,9 @@ main {
   width: 20px;
   height: 20px;
 }
+
+@media (max-width: 900px) {
+  #pp-002 {
+    overflow: hidden;
+  }
+}
