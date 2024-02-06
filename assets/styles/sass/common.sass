@@ -52,7 +52,7 @@ button
   word-spacing: -0.2pt
 
 h1
-  font-size: 32px
+  font-size: 30px
   text-align: center
 
 h2
@@ -89,6 +89,11 @@ header
       embed
         width: 100%
         pointer-events: none
+    h1
+      position: absolute
+      width: 100%
+      margin: 20px 0 0 0
+      pointer-events: none
 
 // main
 main
@@ -294,32 +299,6 @@ main
 
 // *project 006*
 #p-006
-  h1
-    margin-bottom: 60px
-  #buttons
-    width: 100%
-    height: 100px
-    margin-bottom: 16px
-    border: dashed 1px #000
-    border-radius: 2px
-  #canvas
-    width: 600px
-    height: 600px
-    margin: 0 auto 16px auto
-    border: solid 1px #000
-    background: #EEE
-  #save
-    display: block
-    width: 140px
-    height: 50px
-    padding-bottom: 4px
-    margin: 0 auto
-    border: solid 1px #000
-    border-radius: 25px
-    font-size: 18px
-
-// *project 007*
-#p-007
   input
     display: flex
     width: 100%
@@ -413,7 +392,7 @@ main
     border-radius: 2px
 
 // *project 008*
-#p-008
+#p-007
   #header
     z-index: 90
     position: fixed
@@ -429,15 +408,47 @@ main
     width: 100%
     height: 2000px
 
+// *project 009*
+// *Custom Textarea*
+#p-009
+  .wrap
+    display: inline-block
+    position: relative
+    padding: 1px 0
+    &.over
+      padding: 0
+    .textarea
+      display: block
+      position: relative
+      width: 200px
+      height: 180px
+      padding: 1px 6px
+      margin: 0
+      resize: none
+      font-size: 14px
+      &.over
+        resize: both
+        border-top: dashed 1px #000
+        border-bottom: dashed 1px #000
+    .nav
+      display: none
+      position: absolute
+      top: -32px
+      left: 0
+      width: 60px
+      height: 32px
+      background: #EAEAEA
+      &.over
+        display: block
+      input[type=number]
+        display: block
+        width: 100%
+        height: 100%
+        padding: 4px
+        margin: 0
+
 // *practice 001*
 #pp-001
-  header
-    .inner
-      h1
-        position: absolute
-        width: 100%
-        margin: 11px 0 0 0
-        pointer-events: none
   main
     position: relative
     width: 100vw

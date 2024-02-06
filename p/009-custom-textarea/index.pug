@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Custom Textarea | Sandbox
+    link(rel='icon' href='../../assets/images/favicon.svg')
+    link(rel='icon' href='../../assets/images/favicon.png')
+    link(rel='apple-touch-icon' href='../../assets/images/favicon.png')
+    link(rel='stylesheet' href='../../assets/styles/common.css')
+    script(src='../../assets/scripts/cssbrowserselector.js')
+    script(src='./script.js' defer)
+  body#p-009
+    header
+      .inner
+        a#logo(href='../../')
+          embed(src='../../assets/images/logo.svg' type='image/svg+xml' aria-label='')
+        h1 Custom Textarea
+    main
+      //- display: inline-block
+      .wrap
+        //- display: block
+        textarea.textarea(name='textarea') 안녕하세요.
+        div.nav
+          input.text-size(type='number' value='14')
