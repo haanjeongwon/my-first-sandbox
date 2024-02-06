@@ -517,3 +517,35 @@ main
 @include mobile
   #pp-002
     overflow: hidden
+
+// *practice 004*
+#pp-004
+  main
+    #wrap
+      display: flex
+      flex-flow: row nowrap
+      width: 100%
+      #no-fold
+        position: relative
+        width: 25%
+        height: 300px
+        background: #FFF
+      .fold
+        position: relative
+        width: 0
+        height: 300px
+        background: #000
+        transition: 1s ease
+        &.show
+          width: 25%
+      #no-fold img,
+      .fold img
+        width: 100%
+        height: 100%
+      .shadow
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        opacity: 0.2

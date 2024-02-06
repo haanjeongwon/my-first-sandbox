@@ -616,3 +616,37 @@ main {
     overflow: hidden;
   }
 }
+#pp-004 main #wrap {
+  display: flex;
+  flex-flow: row nowrap;
+  width: 100%;
+}
+#pp-004 main #wrap #no-fold {
+  position: relative;
+  width: 25%;
+  height: 300px;
+  background: #FFF;
+}
+#pp-004 main #wrap .fold {
+  position: relative;
+  width: 0;
+  height: 300px;
+  background: #000;
+  transition: 1s ease;
+}
+#pp-004 main #wrap .fold.show {
+  width: 25%;
+}
+#pp-004 main #wrap #no-fold img,
+#pp-004 main #wrap .fold img {
+  width: 100%;
+  height: 100%;
+}
+#pp-004 main #wrap .shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.2;
+}
