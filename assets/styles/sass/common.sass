@@ -415,8 +415,6 @@ main
     display: inline-block
     position: relative
     padding: 1px 0
-    &.over
-      padding: 0
     .textarea
       display: block
       position: relative
@@ -426,26 +424,41 @@ main
       margin: 0
       resize: none
       font-size: 14px
-      &.over
-        resize: both
-        border-top: dashed 1px #000
-        border-bottom: dashed 1px #000
     .nav
       display: none
       position: absolute
       top: -32px
       left: 0
-      width: 60px
+      width: auto
       height: 32px
       background: #EAEAEA
-      &.over
-        display: block
       input[type=number]
         display: block
-        width: 100%
+        width: 50px
         height: 100%
         padding: 4px
         margin: 0
+      button.close
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 22px
+        height: calc(100% - 10px)
+        padding: 0 0 2px 0
+        margin: 5px
+        color: #FFF
+        background: #000
+        border: solid 1px #000
+        border-radius: 3px
+    &.over
+      padding: 0
+      .textarea
+        resize: both
+        border-top: dashed 1px #000
+        border-bottom: dashed 1px #000
+      .nav
+        display: flex
+        flex-flow: row nowrap
 
 // *practice 001*
 #pp-001
