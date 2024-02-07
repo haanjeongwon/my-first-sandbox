@@ -1,0 +1,26 @@
+{
+  "homepage": "https://github.com/ueyuep/my-first-sandbox#readme",
+  "name": "my-first-sandbox",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ueyuep/my-first-sandbox.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ueyuep/my-first-sandbox/issues"
+  },
+  "scripts": {
+    "dev": "parcel index.html",
+    "build": "parcel build index.html",
+    "deploy": "gh-pages -d build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gh-pages": "^6.1.1",
+    "parcel-bundler": "^1.12.5"
+  }
+}
