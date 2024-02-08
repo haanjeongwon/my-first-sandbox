@@ -1,8 +1,14 @@
 {
-  "homepage": "https://github.com/ueyuep/my-first-sandbox#readme",
+  "homepage": "https://ueyuep.github.io/my-first-sandbox/",
   "name": "my-first-sandbox",
   "version": "1.0.0",
   "description": "",
+  "keywords": [],
+  "author": {
+    "name": "Jeongwon Han",
+    "email": "danhanstudio@gmail.com"
+  },
+  "license": "ISC",
   "main": "index.html",
   "repository": {
     "type": "git",
@@ -14,13 +20,14 @@
   "scripts": {
     "dev": "parcel index.html",
     "build": "parcel build index.html",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "gh-pages": "^6.1.1",
+    "parcel": "^2.11.0",
     "parcel-bundler": "^1.12.5"
+  },
+  "dependencies": {
   }
 }

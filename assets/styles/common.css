@@ -679,3 +679,45 @@ main {
   height: 100%;
   opacity: 0.2;
 }
+
+#pp-005 * {
+  font-family: Helvetica Neue, Gothic A1, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.65;
+}
+#pp-005 .text {
+  font-weight: 500;
+  letter-spacing: 0pt;
+  word-spacing: -0.8pt;
+  color: #000;
+}
+#pp-005 .text .fix {
+  position: relative;
+  bottom: 0;
+  font-weight: 600;
+  font-size: 94%;
+  letter-spacing: 0pt;
+  line-height: 1;
+  color: #000;
+}
+#pp-005 .text .fix .fix {
+  font-size: 100%;
+}
+#pp-005 .tt {
+  font-family: Gimlet Text Condensed, Eulyoo1945, "neue-haas-grotesk-text", "gothic-a1", serif;
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 1.65;
+  color: #000;
+}
+#pp-005 .tt .hh {
+  position: relative;
+  top: 0px;
+  font-family: Eulyoo1945, serif;
+  font-weight: 400;
+  font-size: 97%;
+  line-height: 1;
+  color: #000;
+}
