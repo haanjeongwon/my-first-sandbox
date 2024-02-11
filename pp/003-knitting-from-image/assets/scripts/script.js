@@ -10,9 +10,10 @@ const knittingOption = {
   interval: 60
 };
 
-let image = document.getElementById('image');
-let overlayCanvas = document.getElementById('overlayCanvas');
-let overlayLayer = document.getElementById('overlayLayer');
+const input = document.getElementById('input');
+const image = document.getElementById('image');
+const overlayCanvas = document.getElementById('overlayCanvas');
+const overlayLayer = document.getElementById('overlayLayer');
 
 let width = image.width;
 let height = image.height;
@@ -59,6 +60,19 @@ window.addEventListener('resize', function() {
   };
 });
 
+// input event
+let inputValue = input.value;
+
+input.addEventListener('change', function() {
+  if (input.value > 0 && input.value <= 4) {
+    inputValue = input.value;
+  } else {
+    inputValue = 1;
+    input.value = inputValue;
+  };
+  overlayLayer.innerHTML = '';
+  input.blur();
+});
 
 // click event
 let intervalID;
@@ -82,30 +96,47 @@ overlayCanvas.addEventListener('click', function() {
 function knitting() {
   let pixel = ctx.getImageData(currentX, currentY, 2, 2).data;
   let color = 'rgb(' + pixel[0] + ', ' + pixel[1] + ', ' + pixel[2] + ')';
-
   let newEl = document.createElement('ul');
-  newEl.classList.add('block');
-  newEl.innerHTML = `
-    <li style="background: rgb(${pixel[0]} ,${pixel[1]} ,${pixel[2]});">
-    </li>
-    <li style="background: rgb(${pixel[4]} ,${pixel[5]} ,${pixel[6]});">
-      <div style="background: rgb(${255 - pixel[4]} ,${255 - pixel[5]} ,${255 - pixel[6]});"></div>
-    </li>
-    <li style="background: rgb(${pixel[8]} ,${pixel[9]} ,${pixel[10]});">
-      <div style="background: rgb(${255 - pixel[8]} ,${255 - pixel[9]} ,${255 - pixel[10]});"></div>
-    </li>
-    <li style="background: rgb(${pixel[0]} ,${pixel[1]} ,${pixel[2]});">
-      <div style="background: rgb(${255 - pixel[12]} ,${255 - pixel[13]} ,${255 - pixel[14]});"></div>
-    </li>
-  `;
 
-  // let newEl = document.createElement('ul');
-  // newEl.classList.add('block-number');
-  // newEl.innerHTML = `
-  //   <li style="background: rgb(${pixel[0]} ,${pixel[1]} ,${pixel[2]}); color: rgb(${pixel[0]} ,0 ,0);">${pixel[0]}</li>
-  //   <li style="background: rgb(${pixel[0]} ,${pixel[1]} ,${pixel[2]}); color: rgb(0 ,${pixel[1]} ,0);">${pixel[1]}</li>
-  //   <li style="background: rgb(${pixel[0]} ,${pixel[1]} ,${pixel[2]}); color: rgb(0 ,0 ,${pixel[2]});">${pixel[2]}</li>
-  // `;
+  if (inputValue == 1) {
+    newEl.classList.add('block-one');
+    newEl.innerHTML = `
+      <li style="background: rgb(${pixel[0]} ,${pixel[1]} ,${pixel[2]});"></li>
+    `;
+
+  } else if (inputValue == 2) {
+    newEl.classList.add('block-four');
+    newEl.innerHTML = `
+      <li style="background: rgb(${pixel[0]} ,${pixel[1]} ,${pixel[2]});"></li>
+      <li style="background: rgb(${pixel[4]} ,${pixel[5]} ,${pixel[6]});"></li>
+      <li style="background: rgb(${pixel[8]} ,${pixel[9]} ,${pixel[10]});"></li>
+      <li style="background: rgb(${pixel[0]} ,${pixel[1]} ,${pixel[2]});"></li>
+    `;
+
+  } else if (inputValue == 3) {
+    newEl.classList.add('block-dot');
+    newEl.innerHTML = `
+      <li style="background: rgb(${pixel[0]} ,${pixel[1]} ,${pixel[2]});">
+      </li>
+      <li style="background: rgb(${pixel[4]} ,${pixel[5]} ,${pixel[6]});">
+        <div style="background: rgb(${255 - pixel[4]} ,${255 - pixel[5]} ,${255 - pixel[6]});"></div>
+      </li>
+      <li style="background: rgb(${pixel[8]} ,${pixel[9]} ,${pixel[10]});">
+        <div style="background: rgb(${255 - pixel[8]} ,${255 - pixel[9]} ,${255 - pixel[10]});"></div>
+      </li>
+      <li style="background: rgb(${pixel[0]} ,${pixel[1]} ,${pixel[2]});">
+        <div style="background: rgb(${255 - pixel[12]} ,${255 - pixel[13]} ,${255 - pixel[14]});"></div>
+      </li>
+    `;
+
+  } else if (inputValue == 4) {
+    newEl.classList.add('block-number');
+    newEl.innerHTML = `
+      <li style="background: rgb(${pixel[0]} ,${pixel[1]} ,${pixel[2]}); color: rgb(${pixel[0]} ,0 ,0);">${pixel[0]}</li>
+      <li style="background: rgb(${pixel[0]} ,${pixel[1]} ,${pixel[2]}); color: rgb(0 ,${pixel[1]} ,0);">${pixel[1]}</li>
+      <li style="background: rgb(${pixel[0]} ,${pixel[1]} ,${pixel[2]}); color: rgb(0 ,0 ,${pixel[2]});">${pixel[2]}</li>
+    `;
+  };
 
   overlayLayer.append(newEl);
 
@@ -136,9 +167,17 @@ function random(min, max) {
 const button = document.getElementById('save');
 
 button.addEventListener('click', function() {
+  let footer = document.createElement('div');
+  footer.classList.add('footer');
+  footer.innerHTML = 'Knitting from Image © 2024 Jeongwon Han.';
+  overlayLayer.append(footer);
+
   html2canvas(overlayLayer).then(function(canvas) {
     saveAs(canvas.toDataURL(), "capture.png");
   });
+
+  footer.remove();
+  button.blur();
 });
 
 function saveAs(uri, filename) {
