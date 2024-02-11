@@ -498,6 +498,19 @@ main
 // *practice 002*
 #pp-002
   background: #222
+  #save
+    z-index: 1000
+    position: fixed
+    top: 20px
+    right: 20px
+    padding: 4px 8px
+    font-family: 'signo', sans-serif
+    font-weight: 400
+    font-size: 12px
+    line-height: 1
+    color: #0F83F0
+    background: #000
+    border-radius: 4px
   main
     position: relative
     width: 100vw
@@ -526,17 +539,37 @@ main
         left: 0
         width: 100vw
         pointer-events: none
-        .part
-          width: 20px
-          height: 20px
         .block
           display: flex
           flex-flow: row wrap
-          width: 20px
-          height: 20px
+          width: 14px
+          height: 14px
           li
-            width: 10px
+            display: flex
+            align-items: center
+            justify-content: center
+            width: 7px
+            height: 7px
+            div
+              width: 3px
+              height: 3px
+              border-radius: 1px
+        .block-number
+          display: flex
+          flex-flow: column nowrap
+          width: 30px
+          height: 30px
+          li
+            display: flex
+            align-items: center
+            justify-content: center
+            width: 30px
             height: 10px
+            font-family: 'signo', sans-serif
+            font-weight: 500
+            font-size: 8px
+            line-height: 1
+            text-align: center
 
 @include mobile
   #pp-002
