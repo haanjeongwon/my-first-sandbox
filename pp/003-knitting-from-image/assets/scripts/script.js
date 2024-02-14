@@ -10,45 +10,36 @@ const knittingOption = {
   interval: 60
 };
 
-const input = document.getElementById('input');
 const image = document.getElementById('image');
+const input = document.getElementById('input');
+const upload = document.getElementById('upload');
+const uploadButton = document.getElementById('upload-btn');
 const imageContainer = document.getElementById('imageContainer');
 const overlayCanvas = document.getElementById('overlayCanvas');
 const overlayLayer = document.getElementById('overlayLayer');
 
-let width = image.width;
-let height = image.height;
+let width, height, ctx, currentX, currentY;
 
-overlayCanvas.width = width;
-overlayCanvas.height = height;
+createCanvas();
+currentX = 0;
+currentY = 0;
 
-let ctx = overlayCanvas.getContext('2d');
-ctx.clearRect(0, 0, overlayCanvas.width, overlayCanvas.height);
-ctx.drawImage(image, 0, 0, overlayCanvas.width, overlayCanvas.height);
-
-let currentX = 0;
-let currentY = 0;
-
-// window.addEventListener('mousemove', function(event) {
-//   knitting();
-//   knitting();
-// });
-
-// window.addEventListener('touchmove', function(event) {
-//   knitting();
-// });
+// create canvas
+function createCanvas() {
+  width = image.width;
+  height = image.height;
+  
+  overlayCanvas.width = width;
+  overlayCanvas.height = height;
+  
+  ctx = overlayCanvas.getContext('2d', {willReadFrequently: true});
+  ctx.clearRect(0, 0, overlayCanvas.width, overlayCanvas.height);
+  ctx.drawImage(image, 0, 0, overlayCanvas.width, overlayCanvas.height);
+};
 
 // resize event
 window.addEventListener('resize', function() {
-  width = image.width;
-  height = image.height;
-
-  overlayCanvas.width = width;
-  overlayCanvas.height = height;
-
-  let ctx = overlayCanvas.getContext('2d');
-  ctx.clearRect(0, 0, overlayCanvas.width, overlayCanvas.height);
-  ctx.drawImage(image, 0, 0, overlayCanvas.width, overlayCanvas.height);
+  createCanvas();
 
   if (currentX >= width) {
     currentX = 0;
@@ -56,6 +47,29 @@ window.addEventListener('resize', function() {
   };
 
   if (currentY >= height) {
+    currentX = 0;
+    currentY = 0;
+  };
+});
+
+// upload button event
+uploadButton.addEventListener('click', function() {
+  upload.click();
+});
+
+// upload event
+upload.addEventListener('change', function() {
+  if (!upload.files[0].type.match('image/*')) {
+    alert('이미지 파일만 업로드가 가능합니다.');
+    return
+  };
+  
+  const file = URL.createObjectURL(upload.files[0]);
+  image.src = file;
+  image.onload = function() {
+    overlayLayer.innerHTML = '';
+  
+    createCanvas();
     currentX = 0;
     currentY = 0;
   };
@@ -74,6 +88,17 @@ input.addEventListener('change', function() {
   overlayLayer.innerHTML = '';
   input.blur();
 });
+
+
+// window.addEventListener('mousemove', function(event) {
+//   knitting();
+//   knitting();
+// });
+
+// window.addEventListener('touchmove', function(event) {
+//   knitting();
+// });
+
 
 // click event
 let intervalID;

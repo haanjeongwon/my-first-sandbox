@@ -19,10 +19,12 @@ html
     //-   div.inner
     //-     a#logo(href='../../')
     //-       embed(src='../../assets/images/logo.svg' type='image/svg+xml' aria-label='')
+    input#upload(type='file' accept='image/*' required)
+    button#upload-btn Upload
     input#input(type='' value='1')
     button#save Save
     main
       div#imageContainer
-        img(src='./assets/images/red-velvet-feel-my-rhythm.jpeg' alt='')#image
+        img#image(src='./assets/images/red-velvet-feel-my-rhythm.jpeg' alt='')
         canvas#overlayCanvas
         div#overlayLayer

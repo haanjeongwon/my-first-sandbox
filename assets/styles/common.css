@@ -592,8 +592,12 @@ main {
 #pp-002 {
   background: #000;
 }
+#pp-002 #upload {
+  display: none;
+}
 #pp-002 #input,
-#pp-002 #save {
+#pp-002 #save,
+#pp-002 #upload-btn {
   z-index: 1000;
   position: fixed;
   height: 24px;
@@ -609,6 +613,11 @@ main {
   background: #000;
   border: solid 2px #0F83F0;
   border-radius: 8px;
+}
+#pp-002 #upload-btn {
+  width: 70px;
+  top: 20px;
+  right: 140px;
 }
 #pp-002 #input {
   top: 20px;
@@ -634,7 +643,6 @@ main {
 }
 #pp-002 main #imageContainer #image {
   width: 100vw;
-  height: 100vh;
 }
 #pp-002 main #imageContainer #overlayCanvas {
   z-index: 1;

@@ -498,8 +498,11 @@ main
 // *practice 002*
 #pp-002
   background: #000
+  #upload
+    display: none
   #input,
-  #save
+  #save,
+  #upload-btn
     z-index: 1000
     position: fixed
     height: 24px
@@ -515,6 +518,10 @@ main
     background: #000
     border: solid 2px #0F83F0
     border-radius: 8px
+  #upload-btn
+    width: 70px
+    top: 20px
+    right: 140px
   #input
     top: 20px
     right: 80px
@@ -535,7 +542,6 @@ main
       cursor: pointer
       #image
         width: 100vw
-        height: 100vh
       #overlayCanvas
         z-index: 1
         position: absolute

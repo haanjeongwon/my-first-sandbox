@@ -16,10 +16,12 @@
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
   </head>
   <body id="pp-002">
+    <input id="upload" type="file" accept="image/*" required>
+    <button id="upload-btn">Upload</button>
     <input id="input" type="" value="1">
     <button id="save">Save</button>
     <main>
-      <div id="imageContainer"><img src="./assets/images/red-velvet-feel-my-rhythm.jpeg" alt="" id="image">
+      <div id="imageContainer"><img id="image" src="./assets/images/red-velvet-feel-my-rhythm.jpeg" alt="">
         <canvas id="overlayCanvas"></canvas>
         <div id="overlayLayer"></div>
       </div>
