@@ -604,7 +604,7 @@ main {
   width: 48px;
   padding: 4px 8px;
   margin: 0;
-  font-family: "signo", sans-serif;
+  font-family: signo, sans-serif;
   font-weight: 500;
   font-size: 12px;
   line-height: 1;
@@ -687,19 +687,19 @@ main {
 #pp-002 main #imageContainer #overlayLayer .block-dot {
   display: flex;
   flex-flow: row wrap;
-  width: 28px;
-  height: 28px;
+  width: 16px;
+  height: 16px;
 }
 #pp-002 main #imageContainer #overlayLayer .block-dot li {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 14px;
-  height: 14px;
+  width: 8px;
+  height: 8px;
 }
 #pp-002 main #imageContainer #overlayLayer .block-dot li div {
-  width: 6px;
-  height: 6px;
+  width: 4px;
+  height: 4px;
   border-radius: 2px;
 }
 #pp-002 main #imageContainer #overlayLayer .block-number {
@@ -718,7 +718,7 @@ main {
   overflow: visible;
 }
 #pp-002 main #imageContainer #overlayLayer .block-number li p {
-  font-family: "signo", sans-serif;
+  font-family: signo, sans-serif;
   font-weight: 500;
   font-size: 10px;
   line-height: 1.1;
@@ -736,11 +736,6 @@ main {
   color: #000;
 }
 
-@media (max-width: 900px) {
-  #pp-002 {
-    overflow: hidden;
-  }
-}
 #pp-004 main #wrap {
   display: flex;
   flex-flow: row nowrap;

@@ -20,21 +20,24 @@ const overlayLayer = document.getElementById('overlayLayer');
 
 let width, height, ctx, currentX, currentY;
 
-createCanvas();
+image.src = './assets/images/red-velvet.jpg';
+image.onload = function() {
+  createCanvas();
+};
 currentX = 0;
 currentY = 0;
 
 // create canvas
 function createCanvas() {
-  width = image.width;
-  height = image.height;
-  
-  overlayCanvas.width = width;
-  overlayCanvas.height = height;
-  
-  ctx = overlayCanvas.getContext('2d', {willReadFrequently: true});
-  ctx.clearRect(0, 0, overlayCanvas.width, overlayCanvas.height);
-  ctx.drawImage(image, 0, 0, overlayCanvas.width, overlayCanvas.height);
+    width = image.width;
+    height = image.height;
+    
+    overlayCanvas.width = width;
+    overlayCanvas.height = height;
+    
+    ctx = overlayCanvas.getContext('2d', {willReadFrequently: true});
+    ctx.clearRect(0, 0, overlayCanvas.width, overlayCanvas.height);
+    ctx.drawImage(image, 0, 0, overlayCanvas.width, overlayCanvas.height);
 };
 
 // resize event
@@ -67,12 +70,11 @@ upload.addEventListener('change', function() {
   const file = URL.createObjectURL(upload.files[0]);
   image.src = file;
   image.onload = function() {
-    overlayLayer.innerHTML = '';
-  
     createCanvas();
-    currentX = 0;
-    currentY = 0;
+    overlayLayer.innerHTML = '';
   };
+  currentX = 0;
+  currentY = 0;
 });
 
 // input event
