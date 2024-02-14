@@ -1,17 +1,18 @@
 const knittingOption = {
-  xMin: -10,
-  xMax: 25,
-  yMin: -50,
-  yMax: 50,
-  yOut: 100,
-  yMinNL: -8,
-  yMaxNL: 20,
-  repeat: 20,
+  xMin: -100,
+  xMax: 250,
+  yMin: -500,
+  yMax: 500,
+  yOut: 500,
+  yMinNL: -10,
+  yMaxNL: 30,
+  repeat: 40,
   interval: 60
 };
 
 const input = document.getElementById('input');
 const image = document.getElementById('image');
+const imageContainer = document.getElementById('imageContainer');
 const overlayCanvas = document.getElementById('overlayCanvas');
 const overlayLayer = document.getElementById('overlayLayer');
 
@@ -78,7 +79,7 @@ input.addEventListener('change', function() {
 let intervalID;
 let isRunning = false;
 
-overlayCanvas.addEventListener('click', function() {
+imageContainer.addEventListener('click', function() {
   if (isRunning) {
     clearInterval(intervalID);
     isRunning = false;
@@ -132,10 +133,17 @@ function knitting() {
   } else if (inputValue == 4) {
     newEl.classList.add('block-number');
     newEl.innerHTML = `
-      <li style="background: rgb(${pixel[0]} ,${pixel[1]} ,${pixel[2]}); color: rgb(${pixel[0]} ,0 ,0);">${pixel[0]}</li>
-      <li style="background: rgb(${pixel[0]} ,${pixel[1]} ,${pixel[2]}); color: rgb(0 ,${pixel[1]} ,0);">${pixel[1]}</li>
-      <li style="background: rgb(${pixel[0]} ,${pixel[1]} ,${pixel[2]}); color: rgb(0 ,0 ,${pixel[2]});">${pixel[2]}</li>
+      <li>
+        <p style="color: rgb(${pixel[0]} ,0 ,0)">${pixel[0]}</p>
+        <p style="color: rgb(0 ,${pixel[1]} ,0)">${pixel[1]}</p>
+        <p style="color: rgb(0 ,0 ,${pixel[2]})">${pixel[2]}</p>
+      </li>
     `;
+    // newEl.innerHTML = `
+    //   <li style="background: rgb(${pixel[0]} ,${pixel[1]} ,${pixel[2]}); color: rgb(${pixel[0]} ,0 ,0);"><span>${pixel[0]}</span></li>
+    //   <li style="background: rgb(${pixel[0]} ,${pixel[1]} ,${pixel[2]}); color: rgb(0 ,${pixel[1]} ,0);"><span>${pixel[1]}</span></li>
+    //   <li style="background: rgb(${pixel[0]} ,${pixel[1]} ,${pixel[2]}); color: rgb(0 ,0 ,${pixel[2]});"><span>${pixel[2]}</span></li>
+    // `;
   };
 
   overlayLayer.append(newEl);
@@ -173,7 +181,10 @@ button.addEventListener('click', function() {
   overlayLayer.append(footer);
 
   html2canvas(overlayLayer).then(function(canvas) {
-    saveAs(canvas.toDataURL(), "capture.png");
+    saveAs(canvas.toDataURL(), "capture.png"), {
+      allowTaint: true,
+      useCORS : true,
+    };
   });
 
   footer.remove();
