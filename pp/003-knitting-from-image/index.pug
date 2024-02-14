@@ -19,10 +19,13 @@ html
     //-   div.inner
     //-     a#logo(href='../../')
     //-       embed(src='../../assets/images/logo.svg' type='image/svg+xml' aria-label='')
-    input#upload(type='file' accept='image/*' required)
-    button#upload-btn Upload
-    input#input(type='' value='1')
-    button#save Save
+    nav
+      .nav-right
+        input#upload(type='file' accept='image/*' required)
+        button#upload-btn Upload
+        input#input(type='' value='1')
+        button#save Save
+        button#clear Clear
     main
       div#imageContainer
         img#image

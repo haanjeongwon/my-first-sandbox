@@ -16,10 +16,15 @@
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
   </head>
   <body id="pp-002">
-    <input id="upload" type="file" accept="image/*" required>
-    <button id="upload-btn">Upload</button>
-    <input id="input" type="" value="1">
-    <button id="save">Save</button>
+    <nav>
+      <div class="nav-right">
+        <input id="upload" type="file" accept="image/*" required>
+        <button id="upload-btn">Upload</button>
+        <input id="input" type="" value="1">
+        <button id="save">Save</button>
+        <button id="clear">Clear</button>
+      </div>
+    </nav>
     <main>
       <div id="imageContainer"><img id="image">
         <canvas id="overlayCanvas"></canvas>

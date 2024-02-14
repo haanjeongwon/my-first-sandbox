@@ -592,53 +592,74 @@ main {
 #pp-002 {
   background: #000;
 }
-#pp-002 #upload {
-  display: none;
-}
-#pp-002 #input,
-#pp-002 #save,
-#pp-002 #upload-btn {
+#pp-002 nav {
   z-index: 1000;
   position: fixed;
+  width: 100%;
+  height: 0;
+}
+#pp-002 nav .nav-right {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 60px;
+  padding-right: 20px;
+}
+@media (max-width: 900px) {
+  #pp-002 nav .nav-right {
+    height: 48px;
+    padding-right: 12px;
+  }
+}
+#pp-002 nav .nav-right #upload {
+  display: none;
+}
+#pp-002 nav .nav-right * {
+  margin-left: 12px;
   height: 24px;
   width: 48px;
   padding: 4px 8px;
-  margin: 0;
   font-family: signo, sans-serif;
   font-weight: 500;
   font-size: 12px;
   line-height: 1;
   text-align: center;
-  color: #0F83F0;
-  background: #000;
-  border: solid 2px #0F83F0;
+  color: #000000;
+  background: #EAEAEA;
   border-radius: 8px;
 }
-#pp-002 #upload-btn {
+@media (max-width: 900px) {
+  #pp-002 nav .nav-right * {
+    margin-left: 10px;
+  }
+}
+#pp-002 nav .nav-right #upload-btn {
   width: 70px;
-  top: 20px;
-  right: 140px;
 }
-#pp-002 #input {
-  top: 20px;
-  right: 80px;
+#pp-002 nav .nav-right #save {
+  background-color: #44C4FF;
 }
-#pp-002 #save {
-  top: 20px;
-  right: 20px;
+#pp-002 nav .nav-right #clear {
+  background-color: #FF5938;
 }
 #pp-002 main {
   position: relative;
   width: 100vw;
   max-width: 100vw;
-  height: 100vh;
   padding: 0;
   margin: 0;
+}
+@media (max-width: 900px) {
+  #pp-002 main {
+    padding-top: 48px;
+  }
 }
 #pp-002 main #imageContainer {
   position: relative;
   width: 100vw;
-  height: 100vh;
   cursor: pointer;
 }
 #pp-002 main #imageContainer #image {
@@ -677,30 +698,30 @@ main {
 #pp-002 main #imageContainer #overlayLayer .block-four {
   display: flex;
   flex-flow: row wrap;
-  width: 14px;
-  height: 14px;
+  width: 10px;
+  height: 10px;
 }
 #pp-002 main #imageContainer #overlayLayer .block-four li {
-  width: 7px;
-  height: 7px;
+  width: 5px;
+  height: 5px;
 }
 #pp-002 main #imageContainer #overlayLayer .block-dot {
   display: flex;
   flex-flow: row wrap;
-  width: 16px;
-  height: 16px;
+  width: 10px;
+  height: 10px;
 }
 #pp-002 main #imageContainer #overlayLayer .block-dot li {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 8px;
-  height: 8px;
+  width: 5px;
+  height: 5px;
 }
 #pp-002 main #imageContainer #overlayLayer .block-dot li div {
-  width: 4px;
-  height: 4px;
-  border-radius: 2px;
+  width: 2px;
+  height: 2px;
+  border-radius: 1px;
 }
 #pp-002 main #imageContainer #overlayLayer .block-number {
   display: flex;

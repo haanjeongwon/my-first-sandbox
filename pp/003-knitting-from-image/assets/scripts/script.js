@@ -14,6 +14,8 @@ const image = document.getElementById('image');
 const input = document.getElementById('input');
 const upload = document.getElementById('upload');
 const uploadButton = document.getElementById('upload-btn');
+const save = document.getElementById('save');
+const clear = document.getElementById('clear');
 const imageContainer = document.getElementById('imageContainer');
 const overlayCanvas = document.getElementById('overlayCanvas');
 const overlayLayer = document.getElementById('overlayLayer');
@@ -87,7 +89,7 @@ input.addEventListener('change', function() {
     inputValue = 1;
     input.value = inputValue;
   };
-  overlayLayer.innerHTML = '';
+  // overlayLayer.innerHTML = '';
   input.blur();
 });
 
@@ -118,6 +120,13 @@ imageContainer.addEventListener('click', function() {
     }, knittingOption.interval);
     isRunning = true;
   };
+});
+
+// clear function
+clear.addEventListener('click', function() {
+  overlayLayer.innerHTML = '';
+  currentX = 0;
+  currentY = 0;
 });
 
 // knitting function
@@ -199,9 +208,7 @@ function random(min, max) {
 };
 
 // download function
-const button = document.getElementById('save');
-
-button.addEventListener('click', function() {
+save.addEventListener('click', function() {
   let footer = document.createElement('div');
   footer.classList.add('footer');
   footer.innerHTML = 'Knitting from Image © 2024 Jeongwon Han.';
