@@ -81,8 +81,8 @@ main {
 }
 @media (min-width: 901px) {
   main {
-    border-left: solid 1px #000;
-    border-right: solid 1px #000;
+    border-left: dashed 1px #000;
+    border-right: dashed 1px #000;
   }
 }
 @media (max-width: 900px) {
@@ -93,4 +93,31 @@ main {
 main h1 {
   font-weight: 700;
   font-size: 26px;
+}
+main h2 {
+  font-weight: 700;
+  font-size: 22px;
+}
+main #contents {
+  display: flex;
+  flex-flow: column nowrap;
+}
+main #contents h1 {
+  margin: 0 0 36px -1px;
+}
+main .content {
+  display: flex;
+  flex-flow: column nowrap;
+  margin-bottom: 24px;
+}
+main .content h2 {
+  margin-bottom: 14px;
+}
+main .content a {
+  margin: 0 auto 8px 18px;
+}
+@media (min-width: 901px) {
+  main .content a:hover {
+    color: #FFF;
+  }
 }
