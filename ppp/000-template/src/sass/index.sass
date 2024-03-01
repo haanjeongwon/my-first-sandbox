@@ -1,0 +1,86 @@
+@mixin mobile
+  @media (max-width: 900px)
+    @content
+
+@mixin desktop
+  @media (min-width: 901px)
+    @content
+
+*
+  border: 0
+  margin: 0
+  padding: 0
+  font-size: 100%
+  font-display: block
+  font-style: normal
+  word-break: keep-all
+  text-decoration: none
+  list-style: none
+  box-sizing: border-box
+  vertical-align: baseline
+  background-color: transparent
+
+img
+  display: block
+
+input:focus, textarea:focus
+  outline: none
+
+a, a:hover, a:visited
+  color: #000
+  cursor: pointer
+  user-select: none
+
+button
+  color: #000
+  cursor: pointer
+  user-select: none
+
+.win body
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  -webkit-text-stroke: 0.2px
+
+// typography
+
+body
+  font-family: Apple 산돌고딕 Neo, AppleGothicNeoSD, sans-serif
+  font-weight: 600
+  font-size: 18px
+
+// layouts
+
+header
+  position: fixed
+  top: 12px
+  left: 12px
+  a
+    display: flex
+    flex-flow: row nowrap
+    padding: 6px 12px
+    font-weight: 700
+    font-size: 16px
+    background: #EEE //temp
+    border-radius: 4px
+    img
+      width: 15px
+    div
+      padding-top: 3px
+      margin-left: 5px
+    @include desktop
+      &:hover
+        background: #000
+
+main
+  width: 100%
+  max-width: 900px
+  padding: 40px 48px
+  margin: 0 auto
+  @include desktop
+    border-left: solid 1px #000
+    border-right: solid 1px #000
+  @include mobile
+    padding: 80px 32px 36px 32px
+  h1
+    font-weight: 700
+    font-size: 22px
