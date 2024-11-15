@@ -1,0 +1,81 @@
+*
+  border: 0
+  margin: 0
+  padding: 0
+  font-size: 100%
+  // font-display: block
+  font-style: normal
+  word-break: keep-all
+  text-decoration: none
+  list-style: none
+  box-sizing: border-box
+  vertical-align: baseline
+  background-color: transparent
+
+img
+  display: block
+
+input:focus, textarea:focus
+  outline: none
+
+a, a:hover, a:visited
+  color: #000
+  cursor: pointer
+  user-select: none
+
+button
+  color: #000
+  cursor: pointer
+  user-select: none
+
+//
+
+#wrap
+  width: 100%
+  max-width: 900px
+  margin: 0 auto
+  li
+    display: flex
+    flex-flow: row nowrap
+    .list-l
+      display: flex
+      flex-flow: column nowrap
+      width: 100%
+      .list-title
+        padding: 4px 10px 4px 0
+        margin-right: auto
+        background: pink
+    .list-r
+      display: flex
+      align-items: center
+      justify-content: center
+      width: 100px
+      img
+        width: 100%
+
+#list-nav
+  display: flex
+  flex-flow: row nowrap
+  align-items: center
+  justify-content: center
+  width: 100%
+  max-width: 900px
+  margin: 0 auto
+  #list-nav-current
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 100px
+    line-height: 1
+    text-align: center
+  #list-nav-prev,
+  #list-nav-next
+    display: flex
+    align-items: center
+    justify-content: center
+    font-size: 14px
+    line-height: 1
+  #list-nav-prev.hide,
+  #list-nav-next.hide
+    opacity: 0
+    pointer-events: none
